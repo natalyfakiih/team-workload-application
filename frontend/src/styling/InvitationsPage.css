@@ -1,0 +1,383 @@
+/* InvitationsPage */
+
+.invitations-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 960px;
+  animation: ip-fade-in 0.25s ease both;
+}
+
+@keyframes ip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.invitations-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+}
+
+.invitations-page__title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary, #111827);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.invitations-page__send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: #ffffff;
+  background: var(--accent, #f59e0b);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
+  transition:
+    background 0.15s,
+    box-shadow 0.15s,
+    transform 0.1s;
+}
+
+.invitations-page__send-btn:hover {
+  background: #d97706;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
+}
+
+.invitations-page__send-btn:active {
+  transform: translateY(0);
+}
+
+.invitations-page__cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-secondary, #6b7280);
+  background: #f9fafb;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 7px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.invitations-page__cancel-btn:hover {
+  background: #ffffff;
+  color: var(--text-primary, #111827);
+  border-color: #d1d5db;
+}
+
+/* Banners */
+.invitations-page__success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 3px solid #22c55e;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.invitations-page__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 3px solid #ef4444;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+/* Loading / empty */
+.invitations-page__loading,
+.invitations-page__empty {
+  font-size: 13px;
+  color: var(--text-muted, #9ca3af);
+  font-style: italic;
+}
+
+/* Form card */
+.invitations-page__form-card {
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-top: 3px solid var(--accent, #f59e0b);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: ip-fade-in 0.2s ease both;
+}
+
+.invitations-page__form-header {
+  padding: 13px 18px;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+}
+
+.invitations-page__form-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted, #9ca3af);
+  margin: 0;
+}
+
+.invitations-page__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 18px;
+}
+
+.invitations-page__form-error {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 3px solid #ef4444;
+  border-radius: 6px;
+  padding: 9px 13px;
+}
+
+/* Form fields */
+.invitations-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.invitations-page__field--full {
+  grid-column: 1 / -1;
+}
+
+.invitations-page__label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #9ca3af);
+}
+
+.invitations-page__input,
+.invitations-page__select {
+  padding: 8px 12px;
+  font-size: 13.5px;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-primary, #111827);
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 6px;
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.invitations-page__input:focus,
+.invitations-page__select:focus {
+  border-color: var(--accent, #f59e0b);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.invitations-page__input::placeholder {
+  color: #c4cdd6;
+}
+
+.invitations-page__select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.invitations-page__form-footer {
+  grid-column: 1 / -1;
+  padding-top: 4px;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 2px;
+}
+
+.invitations-page__submit-btn {
+  padding: 9px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: #ffffff;
+  background: var(--accent, #f59e0b);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+  transition:
+    background 0.15s,
+    box-shadow 0.15s,
+    transform 0.1s;
+}
+
+.invitations-page__submit-btn:hover:not(:disabled) {
+  background: #d97706;
+  box-shadow: 0 3px 8px rgba(245, 158, 11, 0.28);
+  transform: translateY(-1px);
+}
+
+.invitations-page__submit-btn:active {
+  transform: translateY(0);
+}
+
+.invitations-page__submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Table card */
+.invitations-page__card {
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.invitations-page__card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.invitations-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.invitations-page__table thead tr {
+  background: #fafafa;
+}
+
+.invitations-page__table th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #9ca3af);
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  white-space: nowrap;
+}
+
+.invitations-page__table td {
+  padding: 12px 16px;
+  color: var(--text-primary, #111827);
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.invitations-page__table tbody tr {
+  transition: background 0.12s;
+}
+
+.invitations-page__table tbody tr:hover {
+  background: #fafbff;
+}
+
+.invitations-page__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badge */
+.invitations-page__status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.invitations-page__status--pending {
+  background: #eff6ff;
+  color: #2563eb;
+}
+.invitations-page__status--accepted {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+.invitations-page__status--expired {
+  background: #f9fafb;
+  color: #6b7280;
+}
+.invitations-page__status--cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Row cancel button */
+.invitations-page__row-cancel {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: #ef4444;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s,
+    transform 0.1s;
+}
+
+.invitations-page__row-cancel:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+.invitations-page__row-cancel:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,122 @@
+/* ─── TaskForm ───────────────────────────────────────────────── */
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+}
+
+/* ─── Error ──────────────────────────────────────────────────── */
+.task-form__error {
+  font-size: 13px;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm, 5px);
+  padding: 8px 12px;
+}
+
+/* ─── Field ──────────────────────────────────────────────────── */
+.task-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-form__label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────────── */
+.task-form__input,
+.task-form__textarea,
+.task-form__select {
+  width: 100%;
+  padding: 8px 11px;
+  font-size: 13.5px;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-primary, #111827);
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-sm, 5px);
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.task-form__input:focus,
+.task-form__textarea:focus,
+.task-form__select:focus {
+  border-color: var(--accent, #f59e0b);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.task-form__input::placeholder,
+.task-form__textarea::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+.task-form__textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Select arrow */
+.task-form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* Number input — hide spin buttons */
+.task-form__input[type="number"]::-webkit-inner-spin-button,
+.task-form__input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.task-form__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ─── Two-column row (dates / selects) ───────────────────────── */
+.task-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ─── Submit button ──────────────────────────────────────────── */
+.task-form__submit {
+  align-self: flex-start;
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: #ffffff;
+  background: var(--accent, #f59e0b);
+  border: none;
+  border-radius: var(--radius-sm, 5px);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    opacity 0.15s;
+  margin-top: 4px;
+}
+
+.task-form__submit:hover:not(:disabled) {
+  background: #d97706;
+}
+
+.task-form__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

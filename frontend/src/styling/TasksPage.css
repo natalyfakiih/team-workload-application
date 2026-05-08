@@ -1,0 +1,183 @@
+/* ─── TasksPage ──────────────────────────────────────────────── */
+
+.tasks-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.tasks-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tasks-page__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0;
+}
+
+.tasks-page__create-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: #ffffff;
+  background: var(--accent, #f59e0b);
+  border: none;
+  border-radius: var(--radius-sm, 5px);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tasks-page__create-btn:hover {
+  background: #d97706;
+}
+
+/* ─── Filters ────────────────────────────────────────────────── */
+.tasks-page__filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tasks-page__search {
+  flex: 1;
+  min-width: 200px;
+  padding: 7px 11px;
+  font-size: 13.5px;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-primary, #111827);
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-sm, 5px);
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.tasks-page__search:focus {
+  border-color: var(--accent, #f59e0b);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.tasks-page__search::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+.tasks-page__select {
+  padding: 7px 30px 7px 11px;
+  font-size: 13.5px;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-primary, #111827);
+  background: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-sm, 5px);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.tasks-page__select:focus {
+  border-color: var(--accent, #f59e0b);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.tasks-page__refresh-btn {
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  color: var(--text-secondary, #6b7280);
+  background: #ffffff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius-sm, 5px);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.tasks-page__refresh-btn:hover {
+  background: #f9fafb;
+  color: var(--text-primary, #111827);
+}
+
+/* ─── States ─────────────────────────────────────────────────── */
+.tasks-page__loading,
+.tasks-page__empty {
+  font-size: 13.5px;
+  color: var(--text-muted, #9ca3af);
+  margin: 8px 0;
+}
+
+.tasks-page__error {
+  font-size: 13px;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm, 5px);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+/* ─── Table ──────────────────────────────────────────────────── */
+.tasks-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.tasks-page__table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted, #9ca3af);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  white-space: nowrap;
+}
+
+.tasks-page__table td {
+  padding: 10px 12px;
+  color: var(--text-primary, #111827);
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.tasks-page__table tbody tr {
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.tasks-page__table tbody tr:hover {
+  background: #fafafa;
+}
+
+.tasks-page__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─── Footer count ───────────────────────────────────────────── */
+.tasks-page__count {
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  margin-top: 8px;
+}
